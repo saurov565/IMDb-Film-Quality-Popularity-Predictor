@@ -3,7 +3,7 @@
 # 🎬 IMDb Movie Rating Analytics
 
 **What makes a movie great, and can a model tell before the reviews come in?**
-An end-to-end analysis in R, from raw IMDb tables to Decision Tree and Random Forest models that rank the **best, worst, highest-rated, lowest-rated and most-watched** movies.
+An end-to-end analysis in R, from raw IMDb tables to Decision Tree and Random Forest models that rank the **best, worst, highest-rated, lowest-rated, and most-watched** movies.
 
 ![R](https://img.shields.io/badge/R-4.x-276DC3?style=for-the-badge&logo=r&logoColor=white)
 ![Models](https://img.shields.io/badge/Models-Decision%20Tree%20%7C%20Random%20Forest-F5C518?style=for-the-badge&labelColor=141414)
