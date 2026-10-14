@@ -177,18 +177,9 @@ The Random Forest wins on every metric. In plain terms: it classified **1,798 of
 
 > A 3-class problem where the best guess is right 45% of the time is a hard one. An 8-point gain over the baseline is a real but modest signal, which is what you'd expect when the model can't see cast, director or plot.
 
-<table>
-<tr>
-<td align="center" width="50%">
-<b>🌲 Random Forest</b><br>
-<img src="images/Rplot14.jpeg" alt="Random Forest confusion matrix">
-</td>
-<td align="center" width="50%">
-<b>🌳 Decision Tree</b><br>
-<img src="images/Rplot11.jpeg" alt="Decision Tree confusion matrix">
-</td>
-</tr>
-</table>
+| 🌲 Random Forest | 🌳 Decision Tree |
+|:---:|:---:|
+| ![Random Forest confusion matrix](images/Rplot14.jpeg) | ![Decision Tree confusion matrix](images/Rplot11.jpeg) |
 
 <sub>Class codes: 1 = High, 2 = Low, 3 = Medium.</sub>
 
@@ -197,14 +188,19 @@ The Random Forest wins on every metric. In plain terms: it classified **1,798 of
 The out-of-bag error settles at about **0.46** after roughly 100 trees, and it matches the test-set error (1 − 0.536 = 0.464). That is a good sign the model isn't memorising the training data. The error is lowest for the Medium class (about 0.34) and highest for Low (about 0.59), mirroring the recall table above.
 
 <div align="center">
-<img src="images/Rplot12.jpeg" alt="Random Forest error vs number of trees" width="60%">
+
+![Random Forest error vs number of trees](images/Rplot12.jpeg)
+
 </div>
 
 ### 🎚 What the forest relies on
 
 <div align="center">
-<img src="images/Rplot13.jpeg" alt="Random Forest feature importance" width="60%">
-<br><sub><b>Feature importance (Mean Decrease Gini):</b> votes › release year › runtime › genre › adult flag (negligible)</sub>
+
+![Random Forest feature importance](images/Rplot13.jpeg)
+
+<sub>**Feature importance (Mean Decrease Gini):** votes › release year › runtime › genre › adult flag (negligible)</sub>
+
 </div>
 
 > Gini importance favours continuous features, so genre looks less important here than it really is. The decision tree below uses genre for its first three splits.
@@ -219,8 +215,11 @@ Models predict `Weighted_Score` from year, runtime, adult flag, votes and genre 
 | 🌳 Decision Tree (`anova`) | 0.291 | 0.124 | 0.165 |
 
 <div align="center">
-<img src="images/Rplot15.jpeg" alt="Actual vs predicted weighted score" width="75%">
-<br><sub>The Decision Tree predicts in flat bands (piecewise-constant). The Random Forest follows the diagonal more closely but compresses the extremes.</sub>
+
+![Actual vs predicted weighted score](images/Rplot15.jpeg)
+
+<sub>The Decision Tree predicts in flat bands (piecewise-constant). The Random Forest follows the diagonal more closely but compresses the extremes.</sub>
+
 </div>
 
 ---
@@ -301,7 +300,9 @@ Both regression models score **every** movie, and the top five are listed (ties 
 The tree is the easiest model to explain: its first three questions are all about **genre**, and only then does it use release year, runtime and votes.
 
 <div align="center">
-<img src="images/Rplot10.jpeg" alt="Decision tree visualisation" width="90%">
+
+![Decision tree visualisation](images/Rplot10.jpeg)
+
 </div>
 
 | Movie segment | Share of movies | Outcome |
@@ -398,34 +399,23 @@ Only **176 movies (1.3%)** are flagged adult. They average **5.6** versus **6.1*
 
 <br>
 
-<table>
-<tr>
-<td align="center" width="50%">
-<img src="images/Rplot.jpeg" alt="Distribution of IMDb movie ratings"><br>
-<sub><b>Ratings</b> are roughly bell-shaped (mean 6.13) with a longer tail toward low scores</sub>
-</td>
-<td align="center" width="50%">
-<img src="images/Rplot02.jpeg" alt="Movie frequency by primary genre"><br>
-<sub><b>Genres:</b> Drama (4,126) and Comedy (2,967) dominate</sub>
-</td>
-</tr>
-<tr>
-<td align="center">
-<img src="images/Rplot08.jpeg" alt="Distribution of runtime"><br>
-<sub><b>Runtime</b> peaks near 90 to 100 minutes with a long right tail</sub>
-</td>
-<td align="center">
-<img src="images/Rplot01.jpeg" alt="Boxplot of movie runtime"><br>
-<sub><b>Outlier check:</b> runtimes reach 600 minutes, which motivates the IQR filter</sub>
-</td>
-</tr>
-<tr>
-<td align="center" colspan="2">
-<img src="images/Rplot09.jpeg" alt="Boxplot of votes on log scale" width="50%"><br>
-<sub><b>Votes</b> are extremely right-skewed even on a log scale (median 82, max 3.25M)</sub>
-</td>
-</tr>
-</table>
+| Ratings | Genres |
+|:---:|:---:|
+| ![Distribution of IMDb movie ratings](images/Rplot.jpeg) | ![Movie frequency by primary genre](images/Rplot02.jpeg) |
+| *Roughly bell-shaped (mean 6.13) with a longer tail toward low scores* | *Drama (4,126) and Comedy (2,967) dominate* |
+
+| Runtime | Outlier check |
+|:---:|:---:|
+| ![Distribution of runtime](images/Rplot08.jpeg) | ![Boxplot of movie runtime](images/Rplot01.jpeg) |
+| *Peaks near 90 to 100 minutes with a long right tail* | *Runtimes reach 600 minutes, which motivates the IQR filter* |
+
+<div align="center">
+
+![Boxplot of votes on log scale](images/Rplot09.jpeg)
+
+<sub>**Votes** are extremely right-skewed even on a log scale (median 82, max 3.25M)</sub>
+
+</div>
 
 </details>
 
@@ -434,34 +424,23 @@ Only **176 movies (1.3%)** are flagged adult. They average **5.6** versus **6.1*
 
 <br>
 
-<table>
-<tr>
-<td align="center" width="50%">
-<img src="images/Rplot04.jpeg" alt="Runtime vs rating"><br>
-<sub><b>Runtime vs rating:</b> slight upward trend, driven by a few very long films</sub>
-</td>
-<td align="center" width="50%">
-<img src="images/Rplot03.jpeg" alt="Runtime vs votes"><br>
-<sub><b>Runtime vs votes:</b> the most-voted films cluster at about 100 to 170 minutes</sub>
-</td>
-</tr>
-<tr>
-<td align="center">
-<img src="images/Rplot07.jpeg" alt="Release year vs rating"><br>
-<sub><b>Year vs rating:</b> a slight upward drift, with a wider spread for recent releases</sub>
-</td>
-<td align="center">
-<img src="images/Rplot06.jpeg" alt="Rating by adult status"><br>
-<sub><b>Adult flag:</b> lower median rating (about 5.6 vs 6.2)</sub>
-</td>
-</tr>
-<tr>
-<td align="center" colspan="2">
-<img src="images/Rplot05.jpeg" alt="Weighted score by genre" width="60%"><br>
-<sub><b>Weighted score by genre:</b> Biography scores highest, Horror lowest with the widest spread. Most genres sit near 6.1 because the weighted score pulls low-vote titles toward the mean</sub>
-</td>
-</tr>
-</table>
+| Runtime vs rating | Runtime vs votes |
+|:---:|:---:|
+| ![Runtime vs rating](images/Rplot04.jpeg) | ![Runtime vs votes](images/Rplot03.jpeg) |
+| *Slight upward trend, driven by a few very long films* | *The most-voted films cluster at about 100 to 170 minutes* |
+
+| Year vs rating | Adult flag |
+|:---:|:---:|
+| ![Release year vs rating](images/Rplot07.jpeg) | ![Rating by adult status](images/Rplot06.jpeg) |
+| *A slight upward drift, with a wider spread for recent releases* | *Lower median rating (about 5.6 vs 6.2)* |
+
+<div align="center">
+
+![Weighted score by genre](images/Rplot05.jpeg)
+
+<sub>**Weighted score by genre:** Biography scores highest, Horror lowest with the widest spread. Most genres sit near 6.1 because the weighted score pulls low-vote titles toward the mean</sub>
+
+</div>
 
 </details>
 
