@@ -181,11 +181,11 @@ The Random Forest wins on every metric. In plain terms: it classified **1,798 of
 <tr>
 <td align="center" width="50%">
 <b>🌲 Random Forest</b><br>
-<img src="images/15_rf_confusion_matrix.jpeg" alt="Random Forest confusion matrix">
+<img src="images/Rplot14.jpeg" alt="Random Forest confusion matrix">
 </td>
 <td align="center" width="50%">
 <b>🌳 Decision Tree</b><br>
-<img src="images/12_dt_confusion_matrix.jpeg" alt="Decision Tree confusion matrix">
+<img src="images/Rplot11.jpeg" alt="Decision Tree confusion matrix">
 </td>
 </tr>
 </table>
@@ -197,13 +197,13 @@ The Random Forest wins on every metric. In plain terms: it classified **1,798 of
 The out-of-bag error settles at about **0.46** after roughly 100 trees, and it matches the test-set error (1 − 0.536 = 0.464). That is a good sign the model isn't memorising the training data. The error is lowest for the Medium class (about 0.34) and highest for Low (about 0.59), mirroring the recall table above.
 
 <div align="center">
-<img src="images/13_rf_error_rate.jpeg" alt="Random Forest error vs number of trees" width="60%">
+<img src="images/Rplot12.jpeg" alt="Random Forest error vs number of trees" width="60%">
 </div>
 
 ### 🎚 What the forest relies on
 
 <div align="center">
-<img src="images/14_rf_feature_importance.jpeg" alt="Random Forest feature importance" width="60%">
+<img src="images/Rplot13.jpeg" alt="Random Forest feature importance" width="60%">
 <br><sub><b>Feature importance (Mean Decrease Gini):</b> votes › release year › runtime › genre › adult flag (negligible)</sub>
 </div>
 
@@ -219,7 +219,7 @@ Models predict `Weighted_Score` from year, runtime, adult flag, votes and genre 
 | 🌳 Decision Tree (`anova`) | 0.291 | 0.124 | 0.165 |
 
 <div align="center">
-<img src="images/16_actual_vs_predicted.jpeg" alt="Actual vs predicted weighted score" width="75%">
+<img src="images/Rplot15.jpeg" alt="Actual vs predicted weighted score" width="75%">
 <br><sub>The Decision Tree predicts in flat bands (piecewise-constant). The Random Forest follows the diagonal more closely but compresses the extremes.</sub>
 </div>
 
@@ -301,7 +301,7 @@ Both regression models score **every** movie, and the top five are listed (ties 
 The tree is the easiest model to explain: its first three questions are all about **genre**, and only then does it use release year, runtime and votes.
 
 <div align="center">
-<img src="images/11_decision_tree.jpeg" alt="Decision tree visualisation" width="90%">
+<img src="images/Rplot10.jpeg" alt="Decision tree visualisation" width="90%">
 </div>
 
 | Movie segment | Share of movies | Outcome |
@@ -401,27 +401,27 @@ Only **176 movies (1.3%)** are flagged adult. They average **5.6** versus **6.1*
 <table>
 <tr>
 <td align="center" width="50%">
-<img src="images/01_rating_distribution.jpeg" alt="Distribution of IMDb movie ratings"><br>
+<img src="images/Rplot.jpeg" alt="Distribution of IMDb movie ratings"><br>
 <sub><b>Ratings</b> are roughly bell-shaped (mean 6.13) with a longer tail toward low scores</sub>
 </td>
 <td align="center" width="50%">
-<img src="images/03_genre_frequency.jpeg" alt="Movie frequency by primary genre"><br>
+<img src="images/Rplot02.jpeg" alt="Movie frequency by primary genre"><br>
 <sub><b>Genres:</b> Drama (4,126) and Comedy (2,967) dominate</sub>
 </td>
 </tr>
 <tr>
 <td align="center">
-<img src="images/09_runtime_distribution.jpeg" alt="Distribution of runtime"><br>
+<img src="images/Rplot08.jpeg" alt="Distribution of runtime"><br>
 <sub><b>Runtime</b> peaks near 90 to 100 minutes with a long right tail</sub>
 </td>
 <td align="center">
-<img src="images/02_runtime_boxplot.jpeg" alt="Boxplot of movie runtime"><br>
+<img src="images/Rplot01.jpeg" alt="Boxplot of movie runtime"><br>
 <sub><b>Outlier check:</b> runtimes reach 600 minutes, which motivates the IQR filter</sub>
 </td>
 </tr>
 <tr>
 <td align="center" colspan="2">
-<img src="images/10_votes_boxplot_log.jpeg" alt="Boxplot of votes on log scale" width="50%"><br>
+<img src="images/Rplot09.jpeg" alt="Boxplot of votes on log scale" width="50%"><br>
 <sub><b>Votes</b> are extremely right-skewed even on a log scale (median 82, max 3.25M)</sub>
 </td>
 </tr>
@@ -437,27 +437,27 @@ Only **176 movies (1.3%)** are flagged adult. They average **5.6** versus **6.1*
 <table>
 <tr>
 <td align="center" width="50%">
-<img src="images/05_runtime_vs_rating.jpeg" alt="Runtime vs rating"><br>
+<img src="images/Rplot04.jpeg" alt="Runtime vs rating"><br>
 <sub><b>Runtime vs rating:</b> slight upward trend, driven by a few very long films</sub>
 </td>
 <td align="center" width="50%">
-<img src="images/04_runtime_vs_votes.jpeg" alt="Runtime vs votes"><br>
+<img src="images/Rplot03.jpeg" alt="Runtime vs votes"><br>
 <sub><b>Runtime vs votes:</b> the most-voted films cluster at about 100 to 170 minutes</sub>
 </td>
 </tr>
 <tr>
 <td align="center">
-<img src="images/08_year_vs_rating.jpeg" alt="Release year vs rating"><br>
+<img src="images/Rplot07.jpeg" alt="Release year vs rating"><br>
 <sub><b>Year vs rating:</b> a slight upward drift, with a wider spread for recent releases</sub>
 </td>
 <td align="center">
-<img src="images/07_rating_by_adult_status.jpeg" alt="Rating by adult status"><br>
+<img src="images/Rplot06.jpeg" alt="Rating by adult status"><br>
 <sub><b>Adult flag:</b> lower median rating (about 5.6 vs 6.2)</sub>
 </td>
 </tr>
 <tr>
 <td align="center" colspan="2">
-<img src="images/06_weighted_score_by_genre.jpeg" alt="Weighted score by genre" width="60%"><br>
+<img src="images/Rplot05.jpeg" alt="Weighted score by genre" width="60%"><br>
 <sub><b>Weighted score by genre:</b> Biography scores highest, Horror lowest with the widest spread. Most genres sit near 6.1 because the weighted score pulls low-vote titles toward the mean</sub>
 </td>
 </tr>
@@ -556,9 +556,10 @@ These values are set directly in the script:
 .
 ├── imdb_movie_analysis.R         # Full pipeline: load → EDA → model → evaluate → rank
 ├── images/                       # Plots referenced in this README
-│   ├── 01_rating_distribution.jpeg
+│   ├── Rplot.jpeg
+│   ├── Rplot01.jpeg
 │   ├── …
-│   └── 16_actual_vs_predicted.jpeg
+│   └── Rplot15.jpeg
 └── README.md
 ```
 
